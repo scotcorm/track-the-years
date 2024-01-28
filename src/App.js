@@ -3,12 +3,13 @@ import { Chart as ChartJS, defaults } from 'chart.js/auto';
 import { Bar, Doughnut, Line } from 'react-chartjs-2';
 
 import { Container, Navbar, NavbarBrand } from 'reactstrap';
-import Logo from './app/assets/img/logo.jpg';
+// import Logo from './app/assets/img/logo.jpg';
 
 import './App.css';
-
+import Footer from './components/Footer';
+import Header from './components/Header';
 import mainData from './data/mainData.json';
-import donutData from './data/donutData.json';
+import qaData from './data/qaData.json';
 
 defaults.maintainAspectRatio = false;
 defaults.responsive = true;
@@ -21,16 +22,14 @@ defaults.plugins.title.color = 'black';
 function App() {
   return (
     <div className='App'>
-      <Navbar dark color='primary' sticky='top' expand='md'>
+      <Navbar dark color='primary' expand='md'>
         <Container>
-          <NavbarBrand href='/'>
-            <img src={Logo} alt='logo' />
+          <NavbarBrand>
+            <Header />
           </NavbarBrand>
         </Container>
       </Navbar>
-      <div className='header'>
-        <h1>Production Tracker</h1>
-      </div>
+      <div className='header'>{/* <h1>Production Tracker</h1> */}</div>
       <div className='data'>
         <div className='dataCard firstCard'>
           <Line
@@ -59,7 +58,6 @@ function App() {
             }}
           />
         </div>
-
         <div className='dataCard firstCard'>
           <Line
             data={{
@@ -87,7 +85,6 @@ function App() {
             }}
           />
         </div>
-
         <div className='dataCard secondCard'>
           <Bar
             data={{
@@ -114,15 +111,14 @@ function App() {
             }}
           />
         </div>
-
         <div className='dataCard thirdCard'>
           <Doughnut
             data={{
-              labels: donutData.map((data) => data.label),
+              labels: qaData.map((data) => data.label),
               datasets: [
                 {
                   label: 'Count',
-                  data: donutData.map((data) => data.value),
+                  data: qaData.map((data) => data.value),
                   backgroundColor: [
                     'rgba(43, 63, 229, 0.8)',
                     'rgba(250, 192, 19, 0.8)',
@@ -146,6 +142,7 @@ function App() {
           />
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

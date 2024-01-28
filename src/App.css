@@ -38,27 +38,28 @@ h3,
 .navbar-brand {
   max-width: 4rem;
   margin-right: 2rem;
+  margin-top: 2rem;
 }
 
 .navbar-brand img {
   width: 100%;
   height: 100%;
   margin-right: 2rem;
+
   max-width: 4rem;
 }
 
 .navbar-dark {
-  background-color: #901cad;
-  background-image: linear-gradient(
+  /* background-color: linear-gradient(
     to left,
-    #5637dd,
+    /* #5637dd,
     #3046c5,
-    #3046c5,
-    /* white,
+    #3046c5, */ /* white,
     white */
-  );
+
   /* margin-bottom: 2rem; */
-  min-height: 8rem;
+  min-height: 4rem;
+  padding-top: 2rem;
 }
 
 .page-enter {
@@ -82,7 +83,7 @@ h3,
 }
 
 .dataCard {
-  background-color: hwb(0 98% 0%);
+  background-color: hwb(0 99% 0%);
   border-radius: 0.5em;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   padding: 1em;
@@ -114,7 +115,7 @@ h3,
   flex-wrap: wrap;
 }
 .header {
-  padding: 30px;
+  /* padding: 30px; */
   text-align: center;
 
   color: black;
